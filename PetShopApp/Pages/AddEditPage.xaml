@@ -9,6 +9,46 @@
       Title="AddEditPage">
 
     <Grid>
-        
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <StackPanel Grid.Column="0"
+                    HorizontalAlignment="Center"
+                    VerticalAlignment="Center">
+            <Label Content="Название товара:" FontSize="18"></Label>
+            <TextBox x:Name="ProductNameTextBox" HorizontalContentAlignment="Center"
+                     VerticalContentAlignment="Center"></TextBox>
+            <Label Content="Категория:" FontSize="18"></Label>
+            <ComboBox x:Name="CategoryComboBox" HorizontalContentAlignment="Center"
+                      VerticalContentAlignment="Center"></ComboBox>
+            <Label Content="На складе:" FontSize="18"></Label>
+            <TextBox x:Name="ProductQuantityInStockTextBox" HorizontalContentAlignment="Center"
+                     VerticalContentAlignment="Center"></TextBox>
+            <Label Content="Ед. измерения:" FontSize="18"></Label>
+            <TextBox x:Name="UnitTextBox" HorizontalContentAlignment="Center"
+                     VerticalContentAlignment="Center"></TextBox>
+        </StackPanel>
+        <StackPanel Grid.Column="1" HorizontalAlignment="Center"
+                    VerticalAlignment="Center">
+            <Label Content="Поставщик:" FontSize="18"></Label>
+            <TextBox x:Name="SupplierTextBox" HorizontalContentAlignment="Center"
+                     VerticalContentAlignment="Center"></TextBox>
+            <Label Content="Стоимость:" FontSize="18"></Label>
+            <TextBox x:Name="ProductCostTextBox" HorizontalContentAlignment="Center"
+                     VerticalContentAlignment="Center"></TextBox>
+            <Label Content="Описание:" FontSize="18"></Label>
+            <TextBox x:Name="ProductDescriptionTextBox" HorizontalContentAlignment="Center"
+                     VerticalContentAlignment="Center" Height="100"
+                     TextWrapping="Wrap"></TextBox>
+        </StackPanel>
+        <Button x:Name="AddButton" Click="AddButton_Click" Content="Добавить"
+                HorizontalAlignment="Center"
+                VerticalAlignment="Bottom" Grid.Column="1"
+                Margin="0,0,0,50"></Button>
+        <Button x:Name="BackButton" Click="BackButton_Click" Content="Назад"
+                HorizontalAlignment="Center"
+                VerticalAlignment="Bottom" Grid.Column="1"
+                Margin="0,0,0,10"></Button>
     </Grid>
 </Page>

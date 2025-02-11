@@ -54,7 +54,7 @@
                             <ColumnDefinition Width="150"></ColumnDefinition>
                             <ColumnDefinition Width="150"></ColumnDefinition>
                         </Grid.ColumnDefinitions>
-                        <Image Grid.Column="0" HorizontalAlignment="Center" VerticalAlignment="Center">
+                        <Image Grid.Column="0" Height="100" Width="100">
                             <Image.Source>
                                 <Binding Path="PhotoImage">
                                     <Binding.TargetNullValue>
@@ -63,14 +63,15 @@
                                 </Binding>
                             </Image.Source>
                         </Image>
-                        <StackPanel Grid.Column="1">
+                        <StackPanel Grid.Column="1" VerticalAlignment="Center">
                             <TextBlock Text="{Binding ProductName.Name, StringFormat={}Наименование товара: {0}}"></TextBlock>
                             <TextBlock Text="{Binding ProductDescription, StringFormat={}Описание товара: {0}}"
                                        TextWrapping="Wrap"></TextBlock>
                             <TextBlock Text="{Binding NameManufacturer.Manufacturer, StringFormat={}Производитель: {0}}"></TextBlock>
                             <TextBlock Text="{Binding ProductCost, StringFormat={}Цена: {0}}"></TextBlock>
                         </StackPanel>
-                        <TextBlock Grid.Column="2" Text="{Binding ProductQuantityInStock, StringFormat={}На складе: {0}}"></TextBlock>
+                        <TextBlock Grid.Column="2" Text="{Binding ProductQuantityInStock, StringFormat={}На складе: {0}}"
+                                   HorizontalAlignment="Center" VerticalAlignment="Center"></TextBlock>
                         <Button x:Name="EditButton" Click="EditButton_Click" Content="Редактировать" HorizontalAlignment="Center"
                                 VerticalAlignment="Center" Grid.Column="3"></Button>
                         <Button x:Name="DeleteButton" Click="DeleteButton_Click" Content="Удалить" HorizontalAlignment="Center"
