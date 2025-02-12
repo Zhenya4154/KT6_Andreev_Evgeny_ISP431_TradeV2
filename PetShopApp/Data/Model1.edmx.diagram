@@ -4,7 +4,7 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="484ad611175746298510b028d1622da2" Name="Diagram1">
+      <Diagram DiagramId="19496723558748b4b6f31f5b73cad479" Name="Diagram1">
         <EntityTypeShape EntityType="TradeModel.NameCity" Width="1.5" PointX="1.5" PointY="23.875" IsExpanded="true" />
         <EntityTypeShape EntityType="TradeModel.NameManufacturer" Width="1.5" PointX="0.75" PointY="2.75" IsExpanded="true" />
         <EntityTypeShape EntityType="TradeModel.NameStreet" Width="1.5" PointX="1.5" PointY="26.25" IsExpanded="true" />
@@ -19,7 +19,6 @@
         <EntityTypeShape EntityType="TradeModel.ProductCategory" Width="1.5" PointX="0.75" PointY="10.5" IsExpanded="true" />
         <EntityTypeShape EntityType="TradeModel.ProductName" Width="1.5" PointX="0.75" PointY="12.875" IsExpanded="true" />
         <EntityTypeShape EntityType="TradeModel.Role" Width="1.5" PointX="5.75" PointY="6.375" IsExpanded="true" />
-        <EntityTypeShape EntityType="TradeModel.sysdiagrams" Width="1.5" PointX="2.75" PointY="6.75" IsExpanded="true" />
         <EntityTypeShape EntityType="TradeModel.User" Width="1.5" PointX="8" PointY="6" IsExpanded="true" />
         <AssociationConnector Association="TradeModel.FK_PickUpPoint_NameCity" ManuallyRouted="false" />
         <AssociationConnector Association="TradeModel.FK_Product_NameManufacturer" ManuallyRouted="false" />

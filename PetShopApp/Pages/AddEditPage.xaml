@@ -21,7 +21,8 @@
                      VerticalContentAlignment="Center"></TextBox>
             <Label Content="Категория:" FontSize="18"></Label>
             <ComboBox x:Name="CategoryComboBox" HorizontalContentAlignment="Center"
-                      VerticalContentAlignment="Center"></ComboBox>
+                      VerticalContentAlignment="Center"
+                      DisplayMemberPath="Category"></ComboBox>
             <Label Content="На складе:" FontSize="18"></Label>
             <TextBox x:Name="ProductQuantityInStockTextBox" HorizontalContentAlignment="Center"
                      VerticalContentAlignment="Center"></TextBox>

@@ -23,13 +23,13 @@ namespace PetShopApp.Data
 
         public static TradeEntities GetContext()
         {
-            if(_context == null)
+            if (_context == null)
             {
                 _context = new TradeEntities();
             }
             return _context;
         }
-    
+
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             throw new UnintentionalCodeFirstException();
@@ -49,7 +49,6 @@ namespace PetShopApp.Data
         public virtual DbSet<ProductCategory> ProductCategory { get; set; }
         public virtual DbSet<ProductName> ProductName { get; set; }
         public virtual DbSet<Role> Role { get; set; }
-        public virtual DbSet<sysdiagrams> sysdiagrams { get; set; }
         public virtual DbSet<User> User { get; set; }
     }
 }

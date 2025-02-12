@@ -109,7 +109,7 @@ namespace PetShopApp.Pages
 
         private void DeleteButton_Click(object sender, RoutedEventArgs e)
         {
-
+            MessageBox.Show("Доступ забрещен, только администратор Ачукел Михаил Уралович может получить доступ к данной функции!", "Ошибка!", MessageBoxButton.OK, MessageBoxImage.Exclamation);
         }
 
         private void AddButton_Click(object sender, RoutedEventArgs e)

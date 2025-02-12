@@ -11,6 +11,8 @@ namespace PetShopApp.Classes
     {
         public static Frame MainFrame { get; set; }
         public static Data.User CurrentUser { get; set; }
+
+        //Тут должен быть GetImage(), но я не помню как он пишется)
         
     }
 }

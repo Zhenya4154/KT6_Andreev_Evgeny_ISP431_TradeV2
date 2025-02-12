@@ -6,7 +6,6 @@ C:\Users\comcuru\Desktop\KT6_Andreev_Evgeny_ISP431_TradeV2\PetShopApp\bin\Debug\
 C:\Users\comcuru\Desktop\KT6_Andreev_Evgeny_ISP431_TradeV2\PetShopApp\bin\Debug\EntityFramework.xml
 C:\Users\comcuru\Desktop\KT6_Andreev_Evgeny_ISP431_TradeV2\PetShopApp\bin\Debug\EntityFramework.SqlServer.xml
 C:\Users\comcuru\Desktop\KT6_Andreev_Evgeny_ISP431_TradeV2\PetShopApp\bin\Debug\ru\EntityFramework.resources.dll
-C:\Users\comcuru\Desktop\KT6_Andreev_Evgeny_ISP431_TradeV2\PetShopApp\obj\Debug\PetShopApp.csproj.AssemblyReference.cache
 C:\Users\comcuru\Desktop\KT6_Andreev_Evgeny_ISP431_TradeV2\PetShopApp\obj\Debug\MainWindow.g.cs
 C:\Users\comcuru\Desktop\KT6_Andreev_Evgeny_ISP431_TradeV2\PetShopApp\obj\Debug\Pages\LoginPage.g.cs
 C:\Users\comcuru\Desktop\KT6_Andreev_Evgeny_ISP431_TradeV2\PetShopApp\obj\Debug\App.g.cs
@@ -29,3 +28,4 @@ C:\Users\comcuru\Desktop\KT6_Andreev_Evgeny_ISP431_TradeV2\PetShopApp\obj\Debug\
 C:\Users\comcuru\Desktop\KT6_Andreev_Evgeny_ISP431_TradeV2\PetShopApp\obj\Debug\Pages\ProductListViewPage.baml
 C:\Users\comcuru\Desktop\KT6_Andreev_Evgeny_ISP431_TradeV2\PetShopApp\obj\Debug\Pages\AddEditPage.g.cs
 C:\Users\comcuru\Desktop\KT6_Andreev_Evgeny_ISP431_TradeV2\PetShopApp\obj\Debug\Pages\AddEditPage.baml
+C:\Users\comcuru\Desktop\KT6_Andreev_Evgeny_ISP431_TradeV2\PetShopApp\obj\Debug\PetShopApp.csproj.AssemblyReference.cache

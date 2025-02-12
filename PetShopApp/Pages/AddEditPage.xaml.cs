@@ -22,6 +22,7 @@ namespace PetShopApp.Pages
     {
         public Data.Product CurrentProduct = new Data.Product();
         public string FlagAddOrEdit = "default";
+        public Int32 FlagFaild = 0;
         public AddEditPage(Data.Product _product)
         {
             InitializeComponent();
@@ -30,6 +31,11 @@ namespace PetShopApp.Pages
                 CurrentProduct = _product;
                 FlagAddOrEdit = "edit";
             }
+            else
+            {
+                FlagAddOrEdit = "add";
+            }
+            
             DataContext = CurrentProduct;
             Init();
         }
@@ -80,6 +86,7 @@ namespace PetShopApp.Pages
                 if (string.IsNullOrEmpty(UnitTextBox.Text))
                 {
                     errors.AppendLine("Введите ед. измерения!");
+                    
                 }
                 if (string.IsNullOrEmpty(SupplierTextBox.Text))
                 {
@@ -93,15 +100,105 @@ namespace PetShopApp.Pages
                 {
                     errors.AppendLine("Введите описание товара!");
                 }
-                if(UnitTextBox.Text != ".шт")
+                if (errors.Length > 0)
                 {
-                    errors.AppendLine("Ай, Ай, Ай, нельзя другую ед. измерения использовать!");
+                    MessageBox.Show(errors.ToString(), "Ошибка!", MessageBoxButton.OK, MessageBoxImage.Error);
+                    return;
                 }
-                var cost = Convert.ToInt32(ProductCostTextBox.Text);
-                if(cost < 0)
+                if (UnitTextBox.Text != ".шт")
                 {
-                    errors.AppendLine("АЙ, АЙ, АЙ, нельзя использовать отрицательные числа!");
+                    FlagFaild++;
+                    if (FlagFaild == 1)
+                    {
+                        MessageBox.Show("АЙ, АЙ, АЙ нельзя использовать другую ед. измерения!!!!!", "Ошибка!", MessageBoxButton.OK, MessageBoxImage.Error);
+                    }
+
+                    if (FlagFaild == 2)
+                    {
+                        MessageBox.Show("Не злите, нельзя значит нельзя!!!!!!", "Ошибка!", MessageBoxButton.OK, MessageBoxImage.Error);
+                    }
+
+                    if (FlagFaild == 3)
+                    {
+                        MessageBox.Show("Тест на шуникула пройдет успешно, Поздравляем!", "Ура!", MessageBoxButton.OK, MessageBoxImage.Exclamation);
+                    }
+                    return;
                 }
+
+                var searchProduct = (from item in Data.TradeEntities.GetContext().ProductName
+                                     where item.Name == ProductNameTextBox.Text
+                                     select item).FirstOrDefault();
+                if (searchProduct != null)
+                {
+                    CurrentProduct.IdProductName = searchProduct.Id;
+                }
+                else
+                {
+                    Data.ProductName productName = new Data.ProductName()
+                    {
+                        Name = ProductNameTextBox.Text
+                    };
+                    Data.TradeEntities.GetContext().ProductName.Add(productName);
+                    Data.TradeEntities.GetContext().SaveChanges();
+                    CurrentProduct.IdProductName = productName.Id;
+                }
+
+                var searchSupplier = (from item in Data.TradeEntities.GetContext().NameSupplier
+                                          where item.Supplier == SupplierTextBox.Text
+                                          select item).FirstOrDefault();
+                    if (searchSupplier != null)
+                    {
+                        CurrentProduct.IdProductSupplier = searchSupplier.Id;
+                    }
+                    else
+                    {
+                        Data.NameSupplier productSupplier = new Data.NameSupplier()
+                        {
+                            Supplier = SupplierTextBox.Text
+                        };
+                        Data.TradeEntities.GetContext().NameSupplier.Add(productSupplier);
+                        Data.TradeEntities.GetContext().SaveChanges();
+                        CurrentProduct.IdProductSupplier = productSupplier.Id;
+                    }
+
+                    
+
+                    var searchUnit = (from item in Data.TradeEntities.GetContext().NameUnit
+                                      where item.Unit == UnitTextBox.Text
+                                      select item).FirstOrDefault();
+                    if (searchUnit != null)
+                    {
+                        CurrentProduct.IdNameUnit = searchUnit.Id;
+                    }
+                    else
+                    {
+                        Data.NameUnit productUnit = new Data.NameUnit()
+                        {
+                            Unit = UnitTextBox.Text
+                        };
+                        Data.TradeEntities.GetContext().NameUnit.Add(productUnit);
+                        Data.TradeEntities.GetContext().SaveChanges();
+                        CurrentProduct.IdNameUnit = productUnit.Id;
+                    }
+
+                    CurrentProduct.ProductDescription = ProductDescriptionTextBox.Text;
+                    var selectCategory = CategoryComboBox.SelectedItem as Data.ProductCategory;
+                    CurrentProduct.IdProductCategory = selectCategory.Id;
+                    CurrentProduct.ProductQuantityInStock = Convert.ToInt32(ProductQuantityInStockTextBox.Text);
+                    CurrentProduct.ProductCost = Convert.ToDecimal(ProductCostTextBox.Text);
+
+                    if (FlagAddOrEdit == "add")
+                    {
+                        Data.TradeEntities.GetContext().Product.Add(CurrentProduct);
+                        Data.TradeEntities.GetContext().SaveChanges();
+                        MessageBox.Show("Успешно добавлено!", "Успех!", MessageBoxButton.OK, MessageBoxImage.Information);
+                    }
+                    else if (FlagAddOrEdit == "edit")
+                    {
+                        Data.TradeEntities.GetContext().SaveChanges();
+                        MessageBox.Show("Успешно сохранено!", "Успех!", MessageBoxButton.OK, MessageBoxImage.Information);
+                    }
+                
             }
             catch(Exception ex)
             {
